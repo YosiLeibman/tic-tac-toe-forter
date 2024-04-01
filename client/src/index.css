@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,400&display=swap');
 
 * {
     box-sizing: border-box;
@@ -27,17 +27,21 @@
 }
 
 .cell {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border: 1px solid;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Roboto Mono", monospace;
-    font-weight: 700;
+    font-weight: 400;
     font-style: normal;
     border-radius: 5px;
-    font-size: 2rem;
+    font-size: 3rem;
+}
+
+.cell:hover{
+    background-color: #f5f5f5;
 }
 
 .msg {
