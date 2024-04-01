@@ -22,11 +22,10 @@ function Board() {
       })
 
       console.log(res.data)
-      turn.current = turn.current === 'x' ? 'o' : 'x'
       setBoard(res.data.board)
       switch (res.data.status) {
         case "ok":
-          setMessage(`${turn.current}'s turn to play`)
+          setMessage(`${turn.current === 'x' ? 'o' : 'x'}'s turn to play`)
           break
         case 'win':
           setMessage(`${turn.current} won the game!`)
@@ -38,15 +37,14 @@ function Board() {
           setMessage(`Occupied territory! ${turn.current}'s turn`)
           break
       }
-      if (['tie','win'].includes(res.data.status)) {
+      turn.current = turn.current === 'x' ? 'o' : 'x'
+      if (['tie', 'win'].includes(res.data.status)) {
         setGameOver(true)
       }
     } catch (err) {
       console.log(err)
     }
-    // set the response array to state
-    // switch truns
-    // update message
+
   }
 
   return (<div className='page'>
