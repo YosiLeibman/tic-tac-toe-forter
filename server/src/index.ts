@@ -6,7 +6,7 @@ const app: Express = express();
 
 app.use(express.json())
 
-app.get("/move", (req: Request<{},{},MoveRequest>, res: Response<MoveResponse>) =>{ 
+app.post("/move", (req: Request<{},{},MoveRequest>, res: Response<MoveResponse>) =>{ 
     handleMove(req.body, res)
 });
 
