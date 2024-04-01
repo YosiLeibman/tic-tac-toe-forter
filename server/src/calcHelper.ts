@@ -12,7 +12,7 @@ const wins = [
 export const checkForWin = (newBoard: string[])=>{
     for (const win of wins) {
         const [a,b,c] = win
-        if (newBoard[a] === newBoard[b] && newBoard[a] === newBoard[c]) {
+        if (newBoard[a] && newBoard[a] === newBoard[b] && newBoard[a] === newBoard[c]) {
             return true
         }
     }

@@ -5,7 +5,7 @@ import { checkForTie, checkForWin } from './calcHelper'
 
 export const handleMove = ({ board, turn, move }: MoveRequest, res: Response) => {
     //    validation
-    if (outOfRange(move) && isOccupied(move, board))
+    if (outOfRange(move) || isOccupied(move, board))
         res.send({
             board,
             status: Status.ERROR
