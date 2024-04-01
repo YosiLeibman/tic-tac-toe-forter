@@ -1,9 +1,13 @@
 import express, { Express, Request, Response } from "express";
+import { MoveRequest, MoveResponse } from './types'
+import { handleMove } from './handleMove'
 
 const app: Express = express();
 
-app.get("/move", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+app.use(express.json())
+
+app.get("/move", (req: Request<{},{},MoveRequest>, res: Response<MoveResponse>) =>{ 
+    handleMove(req.body, res)
 });
 
 app.listen(749, () => {
