@@ -9,7 +9,7 @@ interface PropType {
 
 const Cell = ({val,index,handleClick}:PropType) =>{
   return (
-    <div className='cell' onClick={()=>handleClick(index)}>Cell {val} {index}</div>
+    <div className='cell' onClick={()=>handleClick(index)}>{val}</div>
   )
 }
 
